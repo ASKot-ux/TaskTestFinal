@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  apache2:
+    build:
+      context: .
+    volumes:
+      # read_only: false
+      - ./quickstart:/usr/local/apache2/htdocs/
+    #entrypoint: tail -f /dev/null
+    ports:
+      - 8080:8080
+      - 44380:443
+
+#  web:
+#    image: php:7.2-apache
+#    ports:
+#      - 80:80
+#    volumes:
+#      - ./quickstart:/var/www/html
+#
+#  apache2:
+#     volumes:
+#      - ./php/www:/Projects/laravel-test/laravel/quickstart
+#    ports:
+#      - 8080:80
+#      - 44380:443
+#    links:
+#      - php
+#
